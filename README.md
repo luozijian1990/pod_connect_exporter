@@ -41,7 +41,7 @@ go build
 
 ##运行
 ```bash
-./pod-connection-exporter -pod-cidr="your-pod-cidr" --prometheus-addr="your-prometheus-addr" --port="your-listen-port"
+./pod-connection-exporter -pod-cidr="your-pod-cidr" -prometheus-addr="your-prometheus-addr" -port="your-listen-port"
 ```
 
 ## Thanks
