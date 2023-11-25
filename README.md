@@ -39,7 +39,7 @@ go build
 - -prometheus-addr：Prometheus 服务器的地址（默认为 "10.101.20.9:9090"）。
 - -port：导出器监听的端口（默认为 "28880"）。
 
-##运行
+## 运行
 ```bash
 ./pod-connection-exporter -pod-cidr="your-pod-cidr" -prometheus-addr="your-prometheus-addr" -port="your-listen-port"
 ```
