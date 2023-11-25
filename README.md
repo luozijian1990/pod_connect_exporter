@@ -25,10 +25,10 @@ Prometheus Pod connect exporter是一个基于 Golang 开发的工具，旨在�
 
 ```bash
 # 克隆仓库
-git clone https://github.com/your-github-username/pod-connection-exporter.git
+git clone https://github.com/luozijian1990/pod_connect_exporter.git
 
 # 进入项目目录
-cd pod-connection-exporter
+cd pod_connect_exporter
 
 # 构建项目（确保已安装 Golang）
 go build
