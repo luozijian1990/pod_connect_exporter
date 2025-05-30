@@ -15,6 +15,16 @@ Pod Connect Exporter 是一个基于 Golang 开发的工具，用于监控并导
 - **连接分析**：提供连接状态、远程地址、端口等详细信息
 - **健康检查**：内置健康检查接口
 
+## 容器运行时支持
+
+当前版本仅支持 **containerd** 容器运行时。在未来的版本中，我们计划添加以下功能：
+
+- **Docker 支持**：添加对 Docker 容器运行时的支持
+- **自动检测**：自动检测并使用可用的容器运行时
+- **CRI-O 支持**：考虑添加对 CRI-O 容器运行时的支持
+
+如果您需要在使用 Docker 作为容器运行时的环境中部署，请关注项目更新或考虑贡献代码。
+
 ## 项目结构
 
 ```
@@ -37,7 +47,8 @@ Pod Connect Exporter 是一个基于 Golang 开发的工具，用于监控并导
 
 - Go 1.21 或更高版本
 - 访问 Kubernetes 集群的权限（如果在集群内部署）
-- 运行环境能够访问容器运行时（如 containerd）
+- containerd 容器运行时（当前版本仅支持 containerd）
+- 运行环境能够访问 containerd socket（默认位置：/run/containerd/containerd.sock）
 
 ### 安装步骤
 
@@ -149,9 +160,19 @@ spec:
 1. **hostPID: true** - 允许访问主机PID命名空间
 2. **privileged: true** - 获取所需的特权以读取容器进程信息
 3. **/proc挂载** - 通过只读方式挂载主机的/proc到容器的/host/proc
-4. **containerd.sock挂载** - 用于访问容器运行时API
+4. **containerd.sock挂载** - 用于访问容器运行时API（目前仅支持containerd）
 
 这些权限设置类似于node-exporter等系统监控工具的配置。
+
+### 使用 Docker 作为容器运行时
+
+当前版本仅支持 containerd 容器运行时。如果您的 Kubernetes 集群使用 Docker 作为容器运行时，您需要等待后续版本更新。我们计划在未来版本中添加对 Docker 的支持，包括：
+
+1. 自动检测使用的容器运行时
+2. 支持 Docker socket 挂载（/var/run/docker.sock）
+3. 适配 Docker API 获取容器信息
+
+如果您急需此功能，欢迎通过 Pull Request 贡献代码。
 
 ## 致谢
 
