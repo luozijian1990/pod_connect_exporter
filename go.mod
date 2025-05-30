@@ -2,7 +2,7 @@ module pod_connect_exporter
 
 go 1.21
 
-toolchain go1.22.2
+toolchain go1.21.1
 
 require (
 	github.com/containerd/containerd v1.7.27
