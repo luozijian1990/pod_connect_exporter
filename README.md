@@ -53,12 +53,14 @@ Pod Connect Exporter 是一个基于 Golang 开发的工具，用于监控并导
 ### 安装步骤
 
 1. 克隆仓库
+
    ```bash
    git clone https://github.com/luozijian1990/pod_connect_exporter.git
    cd pod_connect_exporter
    ```
 
 2. 构建项目
+
    ```bash
    # 使用构建脚本
    chmod +x build.sh
@@ -69,6 +71,7 @@ Pod Connect Exporter 是一个基于 Golang 开发的工具，用于监控并导
    ```
 
 3. 运行服务
+
    ```bash
    ./pod_connect_exporter -port=28880
    ```
@@ -89,6 +92,7 @@ Pod Connect Exporter 是一个基于 Golang 开发的工具，用于监控并导
 主要指标：`pod_connect_info`
 
 标签：
+
 - `remote_addr`: 远程地址
 - `remote_port`: 远程端口
 - `status`: 连接状态（如 ESTABLISHED, CLOSE_WAIT 等）

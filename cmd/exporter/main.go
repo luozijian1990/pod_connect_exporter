@@ -22,7 +22,7 @@ import (
 var (
 	listenPort string
 	version    = "dev"
-	buildTime  = "unknown"
+	buildTime  = "2025-05-30"
 	nodeName   = "unknown"
 )
 
